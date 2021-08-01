@@ -1,11 +1,10 @@
-<div class="bg-gradient-to-b from-green-400 to-blue-500 px-8 py-4 text-center" id="sidebar">
+<div class="bg-gradient-to-r from-green-400 to-blue-500 px-8 py-4 text-center" id="sidebar">
     <h3 class="text-white font-bold text-2xl">Gifs App</h3>
-    <p class="text-xl mt-4">Historial</p>
+    <p class="text-xl mt-4 text-white">Busuqedas recientes</p>
 
     <hr>
 
     <div class="mt-4">
-        <a (click)="buscar(item)" *ngFor="let item of historial" href="#" class="bg-gray-100 p-2 my-2 rounded block capitalize"> {{item}} </a>
+        <a (click)="buscar(item)" *ngFor="let item of historial" href="#" class="bg-gray-100 p-2 my-2 rounded block sm:inline-block capitalize mr-4"> {{item}} </a>
     </div>
-    
 </div>

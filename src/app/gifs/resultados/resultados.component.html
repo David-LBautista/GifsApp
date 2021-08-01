@@ -1,8 +1,14 @@
-<div  class="grid grid-cols-3 gap-4 mt-10">
+<ng-template #sinResultados>
+    <div class="py-8">
+        <p class="text-center">Aún no has buscado nada, busca algo :)</p>
+    </div>
+</ng-template>
 
+
+<div *ngIf="resultados.length > 0; else sinResultados"  class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10 px-8">
     <div *ngFor="let gif of resultados" class="animate__animated animate__fadeIn">
         <img [src]="gif.images.downsized_medium.url" [alt]="gif.title">
         <h2>{{ gif.title}}</h2>
     </div>
     
-  </div>
+</div>
