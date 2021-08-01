@@ -5,7 +5,7 @@
     <hr>
 
     <div class="mt-4">
-        <a *ngFor="let item of historial" href="#" class="bg-gray-100 p-2 my-2 rounded block capitalize"> {{item}} </a>
+        <a (click)="buscar(item)" *ngFor="let item of historial" href="#" class="bg-gray-100 p-2 my-2 rounded block capitalize"> {{item}} </a>
     </div>
     
 </div>
