@@ -9,6 +9,8 @@ export class GifsService {
   private apiKey:string = 'fQD3daT4y7Laeulizwp1t49OXXseGbBc';
   private _historial:string[] = [];
 
+  public resultados: any[] = [];
+
   constructor(
     private http: HttpClient
   ) { }
@@ -28,9 +30,10 @@ export class GifsService {
       this._historial.unshift(query);
       this._historial = this._historial.splice(0,10);
     }
-    this.http.get('http://api.giphy.com/v1/gifs/search?api_key=fQD3daT4y7Laeulizwp1t49OXXseGbBc&q=dbz&limit=10')
-        .subscribe( resp => {
-          console.log(resp)
+    this.http.get(`http://api.giphy.com/v1/gifs/search?api_key=fQD3daT4y7Laeulizwp1t49OXXseGbBc&q=${query}&limit=12`)
+        .subscribe( (resp:any )=> {
+          this.resultados = resp.data;
+          console.log(this.resultados)
         })
   }
 
